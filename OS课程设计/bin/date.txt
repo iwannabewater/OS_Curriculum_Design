@@ -1,0 +1,4 @@
+date
+
+利用time.h内的time_t和tm结构体获取时间
+随后输出

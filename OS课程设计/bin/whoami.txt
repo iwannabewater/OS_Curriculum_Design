@@ -1,0 +1,7 @@
+新建passwd结构体
+
+getuid获取当前进程uid
+
+getpwuid获取passwd结构体
+
+pw_name即为用户名

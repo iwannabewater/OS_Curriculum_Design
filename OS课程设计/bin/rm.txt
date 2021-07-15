@@ -1,0 +1,7 @@
+rm
+
+struct stat st;  找到目标文件
+
+S_ISREG判定是否为常规文件
+
+S_ISDIR判定文件夹(不执行)

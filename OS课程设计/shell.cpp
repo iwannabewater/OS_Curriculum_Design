@@ -225,7 +225,7 @@ int judgeCMD(char** MyArgv)
 void forkCMD(char** MyArgv)
 {
 	//filename
-	char* filename;
+	char filename[256];
 	//get filename
 	sprintf(filename,"%s%s", "./bin/", MyArgv[0]);
 	//fork新的进程
@@ -270,7 +270,7 @@ void historySHELL()
 void historyADD(const char* pbuf, const int buf_len)
 {
 	//new一个char*出来方便储存
-	char* temp_buf = new char[buf_len];
+	char *temp_buf = new char[buf_len + 1];
 	strcpy(temp_buf, pbuf);
 	temp_buf[buf_len-1] = 0;
 	//如果已储存消息条数小于10则直接添加
@@ -302,6 +302,7 @@ void runCMD(const char* cmd)
 	char buf[1024];
 	strcpy(buf, cmd);
 	buf[buf_len] = '\n';
+	buf[buf_len + 1] = '\0';
 	//储存切割好的命令
 	char* MyArgv[10] = {0};
 	//将读取到的字符串分成多个字符串
@@ -401,9 +402,3 @@ void* runADD(void* cmd)
 	system(MYcmd);
 	return 0;
 }
-
-
-
-
-
-

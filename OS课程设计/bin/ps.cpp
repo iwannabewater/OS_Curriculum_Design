@@ -122,7 +122,7 @@ int read_info(char d_name[],struct ps_info *p1)
 		uid_to_name(infobuf.st_uid, p1);
  
 	chdir(dir);            	            //切换到/proc/pid目录
-	if((fd=fopen("stat","r"))<0)
+	if((fd=fopen("stat","r"))==NULL)
 	{
 		printf("open the file is error!\n");
 		exit(0);		
